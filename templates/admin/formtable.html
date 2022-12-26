@@ -1,0 +1,56 @@
+{% extends "admin/admheaderfooter.html" %}
+{% block content %}
+
+
+<div class="main-content">
+
+    <!-- content -->
+    <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="admin/index">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">table</li>
+            </ol>
+        </nav>
+            <table width="100%">
+                    <tr>
+                     <th>slno</th>
+                    <th>product</th>
+                    <th> prodescription</th>
+                    <th> image</th>
+                </tr>
+                {% for x in user %}
+                        <tr>
+                            <td>{{forloop.counter}}</td>
+                           <!--  <td>{{x.id}}</td> -->
+                            <td>{{x.Fname}}</td>
+                            <td>{{x.fdescription}}</td>
+                            <td><img src="{{x.fimg.url}}" width="100" height="100" style="object-fit: contain;"></td>
+
+
+                            <td><a href="/formupdate/?tid={{x.id}}">edit</a></td>
+                            <td><a href="/formdelete/?uid={{x.id}}">remove</a></td>
+                           
+
+                        </tr>
+                                
+               {% endfor %}   
+                        </table>     
+                
+                <!-- <input type="submit" value="update" class="btn btn-info btn-block"> -->
+              
+              </form>
+              
+            </div>
+          
+        
+          <div class="clearfix"> </div>     
+   </div>
+</div>
+
+
+<!--inner block end here-->
+<!--copy rights start here-->
+{% endblock %}

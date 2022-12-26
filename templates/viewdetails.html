@@ -1,0 +1,44 @@
+{% extends "header&footer.html" %}
+{% block content %}
+   <div class="inner-banner">
+        <section class="w3l-breadcrumb">
+            <div class="container">
+                <h4 class="inner-text-title font-weight-bold text-white mb-sm-3 mb-2">details</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>details</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+  <section class="w3l-portfolio-8 py-5">
+
+                  <div class="row">
+                  {% for x in user %}
+                  <div class="col-md-4 col-sm-6 protfolio-item hover14">
+                        <a href="menu.html" data-lightbox="example-set" data-title="Branding Design">
+                            <figure>
+                                <img src="{{x.fimg.url}}" alt="product" class="img-fluid">
+                                <div class="p-4">
+                                    <p>{{x.fdescription}}</p>
+                                    <a href="menu.html" class="mb-5 img-title">{{x.uid.Fname}}</a>
+                                </div>
+                            </figure>
+                        </a>
+                    </div>
+                     <form>
+                              
+                    <button onclick="document.location='/userdetails/?uid={{x.id}}'" type="button" class="btn btn-style-white btn-style-primary">
+                              RESERVE NOW 
+                              </button>
+</form>
+                 
+                    {% endfor %}
+
+
+</section>
+</div>
+{% endblock %}
+
+
+                              
